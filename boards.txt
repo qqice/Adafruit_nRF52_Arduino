@@ -751,6 +751,66 @@ pca10100.menu.debug_output.rtt=Segger RTT
 pca10100.menu.debug_output.rtt.build.logger_flags=-DCFG_LOGGER=2 -DCFG_TUSB_DEBUG=CFG_DEBUG -DSEGGER_RTT_MODE_DEFAULT=SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL
 
 # -----------------------------------
+# Qorvo DWM3001C Module Development Kit
+# -----------------------------------
+DWM3001CDK.name=Qorvo DWM3001C Module Development Kit
+
+# VID/PID for Bootloader, Arduino & CircuitPython
+DWM3001CDK.vid.0=0x239A
+DWM3001CDK.pid.0=0x80D8
+DWM3001CDK.vid.1=0x239A
+DWM3001CDK.pid.1=0x00D8
+
+# Upload
+DWM3001CDK.bootloader.tool=bootburn
+DWM3001CDK.upload.tool=nrfutil
+DWM3001CDK.upload.protocol=nrfutil
+DWM3001CDK.upload.use_1200bps_touch=true
+DWM3001CDK.upload.wait_for_upload_port=true
+DWM3001CDK.upload.maximum_size=286720
+DWM3001CDK.upload.maximum_data_size=106496
+
+# Build
+DWM3001CDK.build.mcu=cortex-m4
+DWM3001CDK.build.f_cpu=64000000
+DWM3001CDK.build.board=NRF52833_DWM3001CDK
+DWM3001CDK.build.core=nRF5
+DWM3001CDK.build.variant=DWM3001CDK
+DWM3001CDK.build.usb_manufacturer="Qorvo"
+DWM3001CDK.build.usb_product="DWM3001C Module Development Kit"
+DWM3001CDK.build.extra_flags=-DNRF52833_XXAA {build.flags.usb}
+DWM3001CDK.build.ldscript=nrf52833_s140_v7.ld
+DWM3001CDK.build.openocdscript=scripts/openocd/daplink_nrf52.cfg
+DWM3001CDK.build.vid=0x239A
+DWM3001CDK.build.pid=0x80D8
+DWM3001CDK.build.uf2_family=0x621E937A
+
+# Menu: SoftDevice
+DWM3001CDK.menu.softdevice.s140v7=S140 7.3.0
+DWM3001CDK.menu.softdevice.s140v7.build.sd_name=s140
+DWM3001CDK.menu.softdevice.s140v7.build.sd_version=7.3.0
+DWM3001CDK.menu.softdevice.s140v7.build.sd_fwid=0x0123
+
+# Menu: Debug Level
+DWM3001CDK.menu.debug.l0=Level 0 (Release)
+DWM3001CDK.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+DWM3001CDK.menu.debug.l1=Level 1 (Error Message)
+DWM3001CDK.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+DWM3001CDK.menu.debug.l2=Level 2 (Full Debug)
+DWM3001CDK.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+DWM3001CDK.menu.debug.l3=Level 3 (Segger SystemView)
+DWM3001CDK.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+DWM3001CDK.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+
+# Menu: Debug Port
+DWM3001CDK.menu.debug_output.serial=Serial
+DWM3001CDK.menu.debug_output.serial.build.logger_flags=-DCFG_LOGGER=0
+DWM3001CDK.menu.debug_output.serial1=Serial1
+DWM3001CDK.menu.debug_output.serial1.build.logger_flags=-DCFG_LOGGER=1 -DCFG_TUSB_DEBUG=CFG_DEBUG
+DWM3001CDK.menu.debug_output.rtt=Segger RTT
+DWM3001CDK.menu.debug_output.rtt.build.logger_flags=-DCFG_LOGGER=2 -DCFG_TUSB_DEBUG=CFG_DEBUG -DSEGGER_RTT_MODE_DEFAULT=SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL
+
+# -----------------------------------
 # Particle Xenon
 # -----------------------------------
 particle_xenon.name=Particle Xenon
